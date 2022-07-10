@@ -18,7 +18,6 @@ python  manage.py runserver
 ````
 ## Author
 Dread/Berdrago
-````
 
 
 
