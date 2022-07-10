@@ -1,20 +1,19 @@
 from django.contrib import admin
 
 # Registrar Tablas en panel de Administrador 
-from parkinson.models import C_M_ADL
-from parkinson.models import C_M_MBM
-from parkinson.models import V_C_U
-from parkinson.models import RC_USER
-from parkinson.models import C_M_MBM
-from parkinson.models import C_M_ME
-from parkinson.models import C_M_MHYS
-from parkinson.models import C_M_SEADLS
-from parkinson.models import C_USER
-from parkinson.models import F_FINALIZADO
+from parkinson.models import Crear_usuario
+from parkinson.models import Validacion_de_usuario
+from parkinson.models import Recuperacion_contraseña
+from parkinson.models import Creacion_modulo_ME
+from parkinson.models import Creacion_modulo_MHYS
+from parkinson.models import Creacion_modulo_SEADLS
+from parkinson.models import Creacion_modulo_CT
+from parkinson.models import Creacion_modulo_ADL
+from parkinson.models import Creacion_modulo_MBM
+from parkinson.models import FORMULARIO_FINALIZADO
 from parkinson.models import FORMULARIO
 from parkinson.models import GRAFICOS_FF
-from parkinson.models import PDF
-from parkinson.models import  C_M_CT  
+from parkinson.models import PDF 
 
 #---------------------------------------------------
 class ADMIN(admin.ModelAdmin):
@@ -36,27 +35,27 @@ class FORM(admin.ModelAdmin):
 class MODULO1(admin.ModelAdmin):
     list_display=("t_modulo",)
     search_fields=("t_modulo",)
-    list_filter=("n_check",)
+    list_filter=("s_modulo",)
 class MODULO2(admin.ModelAdmin):
     list_display=("t_modulo",)
     search_fields=("t_modulo",)
-    list_filter=("n_check",)
+    list_filter=("s_modulo",)
 class MODULO3(admin.ModelAdmin):
     list_display=("t_modulo",)
     search_fields=("t_modulo",)
-    list_filter=("n_check",)
+    list_filter=("s_modulo",)
 class MODULO4(admin.ModelAdmin):
     list_display=("t_modulo",)
     search_fields=("t_modulo",)
-    list_filter=("n_check",)
+    list_filter=("s_modulo",)
 class MODULO5(admin.ModelAdmin):
     list_display=("t_modulo",)
     search_fields=("t_modulo",)
-    list_filter=("n_check",)
+    list_filter=("s_modulo",)
 class MODULO6(admin.ModelAdmin):
     list_display=("t_modulo",)
     search_fields=("t_modulo",)
-    list_filter=("n_check",)
+    list_filter=("s_modulo",)
 class FORMF(admin.ModelAdmin):
     list_display=("id_ff",)
     search_fields=("fc_ff",)
@@ -71,16 +70,16 @@ class GRAF_F(admin.ModelAdmin):
     list_filter=("g_ff",)
 
 #------------------------------------------------
-admin.site.register(C_USER,ADMIN)
-admin.site.register(V_C_U,VALIDACION)
+admin.site.register(Crear_usuario,ADMIN)
+admin.site.register(Validacion_de_usuario,VALIDACION)
 admin.site.register(FORMULARIO,FORM)
-admin.site.register(C_M_MBM,MODULO1)
-admin.site.register(RC_USER,RECUPERACION)
-admin.site.register(C_M_ADL,MODULO2)
-admin.site.register(C_M_ME,MODULO3)
-admin.site.register(C_M_CT,MODULO4)
-admin.site.register(C_M_MHYS,MODULO5)
-admin.site.register(C_M_SEADLS,MODULO6)
-admin.site.register(F_FINALIZADO,FORMF)
+admin.site.register(Recuperacion_contraseña ,RECUPERACION)
+admin.site.register(Creacion_modulo_MBM,MODULO1)
+admin.site.register(Creacion_modulo_ADL,MODULO2)
+admin.site.register(Creacion_modulo_ME,MODULO3)
+admin.site.register(Creacion_modulo_CT,MODULO4)
+admin.site.register(Creacion_modulo_MHYS,MODULO5)
+admin.site.register(Creacion_modulo_SEADLS,MODULO6)
+admin.site.register(FORMULARIO_FINALIZADO,FORMF)
 admin.site.register(PDF,PFF_F)
 admin.site.register(GRAFICOS_FF,GRAF_F)

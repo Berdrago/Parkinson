@@ -1,95 +1,98 @@
 
+from sre_parse import Verbose
+from tabnanny import verbose
 from django.db import models
 
 # Modelo de Datos de Web Parkinson
-class C_USER(models.Model):
+class Crear_usuario(models.Model):
+    name = models.CharField(max_length=20)
     id_u=models.AutoField(primary_key=True)
-    nombre_u=models.CharField(max_length=20)
-    edad_u=models.IntegerField()
-    correo_u=models.EmailField(max_length=20)
-    profesion_u=models.CharField(max_length=20)
+    nombre_u=models.CharField(max_length=20,verbose_name="Nombre de Usuario")
+    edad_u=models.IntegerField(verbose_name="Edad de Usuario")
+    correo_u=models.EmailField(max_length=20,verbose_name="Correo de Usuario")
+    profesion_u=models.CharField(max_length=20,verbose_name="Profesion de Usuario")
     sex=(
         ('M', 'Masculino',),
         ('F','Femenino',),
     )
-    sexo_u=models.CharField(max_length=1,choices=sex)
-    fnaci=models.DateField()
+    sexo_u=models.CharField(max_length=1,choices=sex,verbose_name="Genero de Usuario")
+    fnaci=models.DateField(verbose_name="Fecha de Nacimiento de  Usuario")
     def __str__(self):
         return self.nombre_u
-class V_C_U(models.Model):
-    correo_u_c=models.EmailField(max_length=20)
+class Validacion_de_usuario(models.Model):
+    correo_u_c=models.EmailField(max_length=20,verbose_name="Correo validado de Usuario")
     def __str__(self):
         return self.correo_u_c
-class RC_USER(models.Model):
-    rc_email=models.EmailField(max_length=20)
+class Recuperacion_contraseña(models.Model):
+    rc_email=models.EmailField(max_length=20,verbose_name="Contraseña Recuperada de Usuario")
     def __str__(self):
         return self.rc_email
 class FORMULARIO(models.Model):
     id_fp=models.AutoField(primary_key=True)
-    f_c_f=models.DateField()
-    score_t_f=models.IntegerField()
-    t_i_m=models.IntegerField()
+    f_c_f=models.DateField(verbose_name="Fecha de Creacion de Formulario")
+    score_t_f=models.IntegerField(verbose_name="Total de Score")
+    t_i_m=models.IntegerField(verbose_name="Total de Interaciones en Modulos")
     def __str__(self):
         return self.id_fp
-class C_M_MBM(models.Model):
+class Creacion_modulo_MBM(models.Model):
     id_mbm=models.AutoField(primary_key=True)
-    t_modulo=models.CharField(max_length=20)
-    s_modulo=models.CharField(max_length=20)
-    n_check=models.IntegerField()
-    score_m=models.IntegerField()
-    i_m=models.IntegerField()
+    t_modulo=models.CharField(max_length=20,verbose_name="Titulo del Modulo")
+    s_modulo=models.CharField(max_length=20,verbose_name="Subtitulo del Modulo")
+    n_check=models.IntegerField(verbose_name="Numero de Checkbox")
+    score_m=models.IntegerField(verbose_name="Score de Modulo")
+    i_m=models.IntegerField(verbose_name="Interaccion de Modulo")
     def __str__(self):
         return self.t_modulo
-class C_M_ADL(models.Model):
+class Creacion_modulo_ADL(models.Model):
     id_adl=models.AutoField(primary_key=True)
-    t_modulo=models.CharField(max_length=20)
-    s_modulo=models.CharField(max_length=20)
-    n_check=models.IntegerField()
-    score_m=models.IntegerField()
-    i_m=models.IntegerField()
+    t_modulo=models.CharField(max_length=20,verbose_name="Titulo del Modulo")
+    s_modulo=models.CharField(max_length=20,verbose_name="Subtitulo del Modulo")
+    n_check=models.IntegerField(verbose_name="Numero de Checkbox")
+    score_m=models.IntegerField(verbose_name="Score de Modulo")
+    i_m=models.IntegerField(verbose_name="Interaccion de Modulo")
     def __str__(self):
         return self.t_modulo
-class C_M_ME(models.Model):
+class Creacion_modulo_ME(models.Model):
     id_me=models.AutoField(primary_key=True)
-    t_modulo=models.CharField(max_length=20)
-    s_modulo=models.CharField(max_length=20)
-    n_check=models.IntegerField()
-    score_m=models.IntegerField()
-    i_m=models.IntegerField()
+    t_modulo=models.CharField(max_length=20,verbose_name="Titulo del Modulo")
+    s_modulo=models.CharField(max_length=20,verbose_name="Subtitulo del Modulo")
+    n_check=models.IntegerField(verbose_name="Numero de Checkbox")
+    score_m=models.IntegerField(verbose_name="Score de Modulo")
+    i_m=models.IntegerField(verbose_name="Interaccion de Modulo")
     def __str__(self):
         return self.t_modulo
-class C_M_CT(models.Model):
+class Creacion_modulo_CT(models.Model ):
     id_ct=models.AutoField(primary_key=True)
-    t_modulo=models.CharField(max_length=20)
-    s_modulo=models.CharField(max_length=20)
-    n_check=models.IntegerField()
-    score_m=models.IntegerField()
-    i_m=models.IntegerField()
+    t_modulo=models.CharField(max_length=20,verbose_name="Titulo del Modulo")
+    s_modulo=models.CharField(max_length=20,verbose_name="Subtitulo del Modulo")
+    n_check=models.IntegerField(verbose_name="Numero de Checkbox")
+    score_m=models.IntegerField(verbose_name="Score de Modulo")
+    i_m=models.IntegerField(verbose_name="Interaccion de Modulo")
     def __str__(self):
         return self.t_modulo
-class C_M_MHYS(models.Model):
+class Creacion_modulo_MHYS(models.Model):
     id_mhys=models.AutoField(primary_key=True)
-    t_modulo=models.CharField(max_length=20 )
-    s_modulo=models.CharField(max_length=20)
-    n_check=models.IntegerField()
-    score_m=models.IntegerField()
-    i_m=models.IntegerField()
+    t_modulo=models.CharField(max_length=20,verbose_name="Titulo del Modulo")
+    s_modulo=models.CharField(max_length=20,verbose_name="Subtitulo del Modulo")
+    n_check=models.IntegerField(verbose_name="Numero de Checkbox")
+    score_m=models.IntegerField(verbose_name="Score de Modulo")
+    i_m=models.IntegerField(verbose_name="Interaccion de Modulo")
     def __str__(self):
         return self.t_modulo
-class C_M_SEADLS(models.Model):
+class Creacion_modulo_SEADLS(models.Model):
     id_seadls=models.AutoField(primary_key=True)
-    t_modulo=models.CharField(max_length=20)
-    s_modulo=models.CharField(max_length=20)
-    n_check=models.IntegerField()
-    score_m=models.IntegerField()
-    i_m=models.IntegerField()
+    t_modulo=models.CharField(max_length=20,verbose_name="Titulo del Modulo")
+    s_modulo=models.CharField(max_length=20,verbose_name="Subtitulo del Modulo")
+    n_check=models.IntegerField(verbose_name="Numero de Checkbox")
+    score_m=models.IntegerField(verbose_name="Score de Modulo")
+    i_m=models.IntegerField(verbose_name="Interaccion de Modulo")
     def __str__(self):
         return self.t_modulo
 
-class F_FINALIZADO(models.Model):
+class FORMULARIO_FINALIZADO(models.Model):
     id_ff=models.AutoField(primary_key=True)
-    score_ff=models.IntegerField()
-    fc_ff=models.DateField()
+    score_ff=models.IntegerField(verbose_name="Score de Formulario Finalizado")
+    fc_ff=models.DateField(verbose_name="Fecha de Creacciond de Formulario Finlizado")
     def __str__(self):
         return self.id_ff
 class PDF(models.Model):
@@ -98,12 +101,11 @@ class PDF(models.Model):
         return self.id_pdf
 class GRAFICOS_FF(models.Model):
     id_g=models.AutoField(primary_key=True)
-    g_ff=models.IntegerField()
-    g_v_d=models.IntegerField()
-    g_f_d=models.IntegerField()
-    g_pr=models.IntegerField()
-    g_id=models.IntegerField()
-    
+    g_ff=models.IntegerField(verbose_name="Total de Formularios Finalizados")
+    g_v_d=models.IntegerField(verbose_name="Total Visitas Por dia")
+    g_f_d=models.IntegerField(verbose_name="Total Formularios Diarios")
+    g_pr=models.IntegerField(verbose_name="Total Personas Registradas Por dia ")
+    g_id=models.IntegerField(verbose_name="Total de Interacciones Diarias")
     def __str__(self):
         return self.g_ff
 
