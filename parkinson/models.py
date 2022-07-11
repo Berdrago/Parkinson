@@ -1,6 +1,4 @@
 
-from sre_parse import Verbose
-from tabnanny import verbose
 from django.db import models
 
 # Modelo de Datos de Web Parkinson
