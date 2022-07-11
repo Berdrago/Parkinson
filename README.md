@@ -12,6 +12,7 @@ Formulario Medico para el tratamiento del Parkinson
 ````
 django-admin startproject FP
 ````
+````
 #--------------Levantar servicio-------------
 ````
 python  manage.py runserver
