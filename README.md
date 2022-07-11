@@ -8,6 +8,7 @@ Instalar visual studios o Editor de codigo a preferencia
 #
 ##
 Formulario Medico para el tratamiento del Parkinson
+##
 #--------------Crear Proyecto----------------
 ````
 django-admin startproject FP
