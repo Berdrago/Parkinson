@@ -8,3 +8,7 @@ def elements(request):
     return render(request,"elements.html")
 def generic(request):
     return render(request,"generic.html")
+def formulario(request):
+    return render(request,"formulario.html")
+def index2(request):
+    return render(request,"index2.html")
