@@ -71,6 +71,64 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
+/*
+.bradio{
+	display: flex;
+	white-space: normal!important;
+    border: 0.5px solid silver;
+	
+}
+.btn{
+	display: inline-block;
+    font-size: 14px;
+    line-height: 1.42857143;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+}
+.btn:hover{
+	box-shadow:0 0 10px #2ca089,
+	           0 0 40px #2ca089,
+			   0 0 80px #2ca089;
+	background-color:   #2ca089;
+}
+*/
+
+.titulo{
+	text-align:center;
+}
+.subtitulo{
+	text-align:center;
+
+}
+.table{
+   width: 100%;
+   border: 1px solid #000;
+   color: #fff;
+}
+.btn{
+    font-size: 14px;
+    line-height: 1.42857143;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+}
+.btn:hover{
+	box-shadow:0 0 10px #2ca089,
+	           0 0 40px #2ca089,
+			   0 0 80px #2ca089;
+	background-color:   #2ca089;
+}
 
 /* Basic */
 
@@ -3997,3 +4055,7 @@ input, select, textarea {
 	body.is-mobile.landing #footer {
 		background-color: #1d242a;
 	}
+
+
+
+	

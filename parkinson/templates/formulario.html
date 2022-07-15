@@ -11,11 +11,71 @@
 {%  endblock %}
 <!-- El bloque de contenido que permite extender solo los archivos de este html en concreto -->
 {% block contenido%}
+	<header id="header" class="alt">
+		<h1><a href="{% url 'index' %}">Inicio</a></h1>
+		<nav id="nav">
+			<ul>
+				<li class="special">
+					<a href="#menu" class="menuToggle"><span>Menu</span></a>
+					<div id="menu">
+						<ul>
+							<li><a href="{% url 'index' %}">Inicio</a></li>
+							<li><a href="{% url 'generic' %}">General</a></li>
+							<li><a href="{% url 'elements' %}">Elememtos</a></li>
+							<li><a href="#">Registrarse</a></li>
+							<li><a href="#">Iniciar Sesion</a></li>
+							<li><a href="http://dread9.pythonanywhere.com/admin/login/?next=/admin">Admin</a></li>
+							<li><a href="{% url 'formulario' %}">Formulario</a></li>
+						</ul>
+					</div>
+				</li>
+			</ul>
+		</nav>
+	</header>
 	<article id="main">
 		<header>
 			<h2>Formulario</h2>
+			
 		</header>
+		{% for creacionmodulo in creacionmodulos %}
 		<section class="wrapper style5">
-		</section >
+			<h2 class="titulo" >{{creacionmodulo.t_modulo}}</h2>
+			<h3 class="subtitulo">{{creacionmodulo.s_modulo}}</h3>
+			<form method="post" action="#">
+				<div class="table">
+					<div class="btn">
+						<input type="radio" id="mod"  name="btn" autocomplete="off"  value="0" checked>
+						<label  for="mod">{{creacionmodulo.nombre_check}}
+							<span class=""></span>
+						</label>
+					</div>
+					<div class="btn">
+						<input type="radio" id="mod1" name="btn" autocomplete="off" value="1" checked>
+						<label class="item" for="mod1">{{creacionmodulo.nombre_check1}}
+							<span class=""></span>
+						</label>
+					</div>
+					<div class="btn">
+						<input type="radio" id="mod2" name="btn" autocomplete="off" value="2"  checked>
+						<label class="item" class="btn " for="mod2">{{creacionmodulo.nombre_check2}}
+							<span class=""></span>
+						</label>
+					</div>
+					<div class="btn">
+						<input type="radio" id="mod3" name="btn" autocomplete="off" value="3" checked>
+						<label class="item" for="mod3">{{creacionmodulo.nombre_check3}}
+							<span class=""></span>
+						</label>
+					</div>
+					<div class="btn">
+						<input type="radio" id="mod4" name="btn" autocomplete="off" value="4" checked>
+						<label class="item"  for="mod4">{{creacionmodulo.nombre_check4}}
+							<span class=""></span>
+						</label>
+					</div>
+				</div>
+			</form>
+	    </section >
+	    {% endfor %}
 	</article>
 {%  endblock %}

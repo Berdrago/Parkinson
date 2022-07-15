@@ -34,8 +34,13 @@ class FORMULARIO(models.Model):
         return self.id_fp
 class Creacion_modulo_MBM(models.Model):
     id_mbm=models.AutoField(primary_key=True)
-    t_modulo=models.CharField(max_length=20,verbose_name="Titulo del Modulo")
-    s_modulo=models.CharField(max_length=20,verbose_name="Subtitulo del Modulo")
+    t_modulo=models.CharField(max_length=240,verbose_name="Titulo del Modulo")
+    s_modulo=models.CharField(max_length=240,verbose_name="Subtitulo del Modulo")
+    nombre_check=models.CharField(max_length=240, verbose_name="Nombre de Modulo 0", default="")
+    nombre_check1=models.CharField(max_length=240,verbose_name="Nombre de Modulo 1", default="")
+    nombre_check2=models.CharField(max_length=240,verbose_name="Nombre de Modulo 2", default="")
+    nombre_check3=models.CharField(max_length=240,verbose_name="Nombre de Modulo 3", default="")
+    nombre_check4=models.CharField(max_length=240,verbose_name="Nombre de Modulo 4", default="")
     n_check=models.IntegerField(verbose_name="Numero de Checkbox")
     score_m=models.IntegerField(verbose_name="Score de Modulo")
     i_m=models.IntegerField(verbose_name="Interaccion de Modulo")
