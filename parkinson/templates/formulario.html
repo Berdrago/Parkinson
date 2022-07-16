@@ -35,7 +35,6 @@
 	<article id="main">
 		<header>
 			<h2>Formulario</h2>
-			
 		</header>
 		{% for creacionmodulo in creacionmodulos %}
 		<section class="wrapper style5">
@@ -43,38 +42,53 @@
 			<h3 class="subtitulo">{{creacionmodulo.s_modulo}}</h3>
 			<form method="post" action="#">
 				<div class="table">
-					<div class="btn">
+					<div class="container">
 						<input type="radio" id="mod"  name="btn" autocomplete="off"  value="0" checked>
-						<label  for="mod">{{creacionmodulo.nombre_check}}
+						<label  for="mod" class="btn">{{creacionmodulo.nombre_check}}
 							<span class=""></span>
 						</label>
 					</div>
-					<div class="btn">
+					<div class="container" >
 						<input type="radio" id="mod1" name="btn" autocomplete="off" value="1" checked>
-						<label class="item" for="mod1">{{creacionmodulo.nombre_check1}}
+						<label class="btn" for="mod1">{{creacionmodulo.nombre_check1}}
 							<span class=""></span>
 						</label>
 					</div>
-					<div class="btn">
+					<div class="container" >
 						<input type="radio" id="mod2" name="btn" autocomplete="off" value="2"  checked>
-						<label class="item" class="btn " for="mod2">{{creacionmodulo.nombre_check2}}
+						<label class="btn" class="btn " for="mod2">{{creacionmodulo.nombre_check2}}
 							<span class=""></span>
 						</label>
 					</div>
-					<div class="btn">
+					<div class="container" >
 						<input type="radio" id="mod3" name="btn" autocomplete="off" value="3" checked>
-						<label class="item" for="mod3">{{creacionmodulo.nombre_check3}}
+						<label class="btn" for="mod3">{{creacionmodulo.nombre_check3}}
 							<span class=""></span>
 						</label>
 					</div>
-					<div class="btn">
+					<div class="container" >
 						<input type="radio" id="mod4" name="btn" autocomplete="off" value="4" checked>
-						<label class="item"  for="mod4">{{creacionmodulo.nombre_check4}}
+						<label class="btn"  for="mod4">{{creacionmodulo.nombre_check4}}
 							<span class=""></span>
 						</label>
 					</div>
 				</div>
 			</form>
+			<div>
+				<div class="hidden-xs" >
+					<h3 class="subtitulo">
+						<b>2. Thought Disorder (Due to dementia or drug intoxication)</b>
+					</h3>
+					<div class="btn-group btn-group-justified" data-toggle="buttons">
+						<label class="text"  for="mod4" class="btn btn-btn-custom">
+							<input type="radio" id="mod4" name="options" autocomplete="off" value="4" checked>
+							<span class="glyphicon glyphicon-unchecked"></span>
+							"Severe memory loss with orientation preserved to person only. Unable to make judgements or solve problems. Requires much help with personal care. Cannot be left alone at all. (4)"
+						</label>
+					</div>
+				</div>
+			</div>
+
 	    </section >
 	    {% endfor %}
 	</article>

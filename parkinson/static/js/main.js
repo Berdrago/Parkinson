@@ -5,79 +5,100 @@
 */
 
 (function($) {
+    const status = 'Enable';
+    const toggle = [true, true, true, true, true];
 
-	var	$window = $(window),
-		$body = $('body'),
-		$wrapper = $('#page-wrapper'),
-		$banner = $('#banner'),
-		$header = $('#header');
+    $.fn.enableDisableRule = function(idx) {
+        if (this.toggle[idx]) {
+            this.toggle[idx] = false;
+            let cnt = 0;
+            this.toggle.forEach(e => {
+                if (cnt !== idx) {
+                    this.toggle[cnt] = true;
+                }
+                cnt++;
+            });
+        } else {
+            this.toggle[idx] = true;
+        }
+        this.status = this.toggle[idx] ? 'Enable' : 'Disable';
 
-	// Breakpoints.
-		breakpoints({
-			xlarge:   [ '1281px',  '1680px' ],
-			large:    [ '981px',   '1280px' ],
-			medium:   [ '737px',   '980px'  ],
-			small:    [ '481px',   '736px'  ],
-			xsmall:   [ null,      '480px'  ]
-		});
+    }
 
-	// Play initial animations on page load.
-		$window.on('load', function() {
-			window.setTimeout(function() {
-				$body.removeClass('is-preload');
-			}, 100);
-		});
 
-	// Mobile?
-		if (browser.mobile)
-			$body.addClass('is-mobile');
-		else {
 
-			breakpoints.on('>medium', function() {
-				$body.removeClass('is-mobile');
-			});
+    var $window = $(window),
+        $body = $('body'),
+        $wrapper = $('#page-wrapper'),
+        $banner = $('#banner'),
+        $header = $('#header');
 
-			breakpoints.on('<=medium', function() {
-				$body.addClass('is-mobile');
-			});
+    // Breakpoints.
+    breakpoints({
+        xlarge: ['1281px', '1680px'],
+        large: ['981px', '1280px'],
+        medium: ['737px', '980px'],
+        small: ['481px', '736px'],
+        xsmall: [null, '480px']
+    });
 
-		}
+    // Play initial animations on page load.
+    $window.on('load', function() {
+        window.setTimeout(function() {
+            $body.removeClass('is-preload');
+        }, 100);
+    });
 
-	// Scrolly.
-		$('.scrolly')
-			.scrolly({
-				speed: 1500,
-				offset: $header.outerHeight()
-			});
+    // Mobile?
+    if (browser.mobile)
+        $body.addClass('is-mobile');
+    else {
 
-	// Menu.
-		$('#menu')
-			.append('<a href="#menu" class="close"></a>')
-			.appendTo($body)
-			.panel({
-				delay: 500,
-				hideOnClick: true,
-				hideOnSwipe: true,
-				resetScroll: true,
-				resetForms: true,
-				side: 'right',
-				target: $body,
-				visibleClass: 'is-menu-visible'
-			});
+        breakpoints.on('>medium', function() {
+            $body.removeClass('is-mobile');
+        });
 
-	// Header.
-		if ($banner.length > 0
-		&&	$header.hasClass('alt')) {
+        breakpoints.on('<=medium', function() {
+            $body.addClass('is-mobile');
+        });
 
-			$window.on('resize', function() { $window.trigger('scroll'); });
+    }
 
-			$banner.scrollex({
-				bottom:		$header.outerHeight() + 1,
-				terminate:	function() { $header.removeClass('alt'); },
-				enter:		function() { $header.addClass('alt'); },
-				leave:		function() { $header.removeClass('alt'); }
-			});
+    // Scrolly.
+    $('.scrolly')
+        .scrolly({
+            speed: 1500,
+            offset: $header.outerHeight()
+        });
 
-		}
+    // Menu.
+    $('#menu')
+        .append('<a href="#menu" class="close"></a>')
+        .appendTo($body)
+        .panel({
+            delay: 500,
+            hideOnClick: true,
+            hideOnSwipe: true,
+            resetScroll: true,
+            resetForms: true,
+            side: 'right',
+            target: $body,
+            visibleClass: 'is-menu-visible'
+        });
+
+    // Header.
+    if ($banner.length > 0 &&
+        $header.hasClass('alt')) {
+
+        $window.on('resize', function() { $window.trigger('scroll'); });
+
+        $banner.scrollex({
+            bottom: $header.outerHeight() + 1,
+            terminate: function() { $header.removeClass('alt'); },
+            enter: function() { $header.addClass('alt'); },
+            leave: function() { $header.removeClass('alt'); }
+        });
+
+    }
 
 })(jQuery);
