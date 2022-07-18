@@ -11,7 +11,7 @@
 {%  endblock %}
 <!-- El bloque de contenido que permite extender solo los archivos de este html en concreto -->
 {% block contenido%}
-	<header id="header" class="alt">
+    <header id="header" class="alt">
 		<h1><a href="{% url 'index' %}">Inicio</a></h1>
 		<nav id="nav">
 			<ul>
@@ -32,90 +32,76 @@
 			</ul>
 		</nav>
 	</header>
+<!-- Main -->
 	<article id="main">
 		<header>
 			<h2>Formulario</h2>
 		</header>
-		{% for creacionmodulo in creacionmodulos %}
 		<section class="wrapper style5">
-			<h2 class="titulo" >{{creacionmodulo.t_modulo}}</h2>
-			<h3 class="subtitulo">{{creacionmodulo.s_modulo}}</h3>
-			<form method="post" action="#">
-				<div class="table">
-					<div class="container">
-						<input type="radio" id="mod"  name="btn " autocomplete="off"  value="0" checked>
-						<label  for="mod" class="btn1">{{creacionmodulo.nombre_check}}
-							<span class=""></span>
-						</label>
-					</div>
-					<div class="container" >
-						<input type="radio" id="mod1" name="btn " autocomplete="off" value="1" checked>
-						<label class="btn1" for="mod1">{{creacionmodulo.nombre_check1}}
-							<span class=""></span>
-						</label>
-					</div>
-					<div class="container" >
-						<input type="radio" id="mod2" name="btn  " autocomplete="off" value="2"  checked>
-						<label class="btn1" class="btn " for="mod2">{{creacionmodulo.nombre_check2}}
-							<span class=""></span>
-						</label>
-					</div>
-					<div class="container" >
-						<input type="radio" id="mod3" name="btn " autocomplete="off" value="3" checked>
-						<label class="btn1" for="mod3">{{creacionmodulo.nombre_check3}}
-							<span class=""></span>
-						</label>
-					</div>
-					<div class="container" >
-						<input type="radio" id="mod4" name="btn " autocomplete="off" value="4" checked>
-						<label class="btn1"  for="mod4">{{creacionmodulo.nombre_check4}}
-							<span class=""></span>
-						</label>
-					</div>
-				</div>
-			</form>
-			<div>
-				<div class="hidden-xs" >
+			<div class="inner">
+				{% for creacionmodulo in creacionmodulos %}
+				<h2 class="titulo" >{{creacionmodulo.t_modulo}}</h2>
+				<div>
 					<h3 class="subtitulo">
-						<b>2. Thought Disorder (Due to dementia or drug intoxication)</b>
+						{{creacionmodulo.s_modulo}}
 					</h3>
-					<div class="btn-group btn-group-justified" data-toggle="buttons">
-						<label class="btn btn-btn-custom"  for="mod4" >
-							<input type="radio" id="mod4" name="options" autocomplete="off" value="0" checked>
-							<span class="glyphicon glyphicon-unchecked"></span>
-							"Severe memory loss with orientation preserved to person only. Unable to make judgements or solve problems. Requires much help with personal care. Cannot be left alone at all. (0)"
-						</label>
-					</div>
-					<div class="btn-group btn-group-justified" data-toggle="buttons">
-						<label class="btn btn-btn-custom"  for="mod4" >
-							<input type="radio" id="mod4" name="options" autocomplete="off" value="1" checked>
-							<span class="glyphicon glyphicon-unchecked"></span>
-							"Severe memory loss with orientation preserved to person only. Unable to make judgements or solve problems. Requires much help with personal care. Cannot be left alone at all. (1)"
-						</label>
-					</div>
-					<div class="btn-group btn-group-justified" data-toggle="buttons">
-						<label class="btn btn-btn-custom"  for="mod4" >
-							<input type="radio" id="mod4" name="options" autocomplete="off" value="2" checked>
-							<span class="glyphicon glyphicon-unchecked"></span>
-							"Severe memory loss with orientation preserved to person only. Unable to make judgements or solve problems. Requires much help with personal care. Cannot be left alone at all. (2)"
-						</label>
-					</div>
-					<div class="btn-group btn-group-justified" data-toggle="buttons">
-						<label class="btn btn-btn-custom"  for="mod4" >
-							<input type="radio" id="mod4" name="options" autocomplete="off" value="3" checked>
-							<span class="glyphicon glyphicon-unchecked"></span>
-							"Severe memory loss with orientation preserved to person only. Unable to make judgements or solve problems. Requires much help with personal care. Cannot be left alone at all. (3)"
-						</label>
-					</div><div class="btn-group btn-group-justified" data-toggle="buttons">
-						<label class="btn btn-btn-custom"  for="mod4" >
-							<input type="radio" id="mod4" name="options" autocomplete="off" value="4" checked>
-							<span class="glyphicon glyphicon-unchecked"></span>
-							"Severe memory loss with orientation preserved to person only. Unable to make judgements or solve problems. Requires much help with personal care. Cannot be left alone at all. (4)"
-						</label>
+					<div class="table-wrapper">
+						<table class="alt">
+							<tbody  class="subtitulo">
+								<tr>
+									<td>
+										<div class="" >
+											<label class="btn btn-btn-custom"  for="mod0" >
+												<input type="radio"id="mod0" name="options0" autocomplete="off" value="0" checked>
+												<span class="glyphicon glyphicon-unchecked"></span>
+												{{creacionmodulo.nombre_check}}
+											</label>
+								 		</div>
+									</td>
+									<td>
+										<div class="" >
+											<label class="btn btn-btn-custom"  for="mod1" >
+												<input type="radio"id="mod1" name="options1" autocomplete="off" value="1" checked>
+												<span class="glyphicon glyphicon-unchecked"></span>
+												{{creacionmodulo.nombre_check1}}
+											</label>
+										</div>
+									</td>
+									<td>
+										<div class="" >
+											<label class="btn btn-btn-custom"  for="mod2" >
+												<input type="radio"id="mod2" name="options2" autocomplete="off" value="2" checked>
+												<span class="glyphicon glyphicon-unchecked"></span>
+												{{creacionmodulo.nombre_check2}}
+											</label>
+										</div>
+									</td>
+									<td>
+										<div class="" data-toggle="buttons">
+											<label class="btn btn-btn-custom"  for="mod3" >
+												<input type="radio"id="mod3" name="options3" autocomplete="off" value="3" checked>
+												<span class="glyphicon glyphicon-unchecked"></span>
+												{{creacionmodulo.nombre_check3}}
+											</label>
+										</div>
+									</td>
+									<td>
+										<div class="" >
+											<label class="btn btn-btn-custom"  for="mod4" >
+												<input type="radio"id="mod4" name="options4" autocomplete="off" value="4" checked>
+												<span class="glyphicon glyphicon-unchecked"></span>
+												{{creacionmodulo.nombre_check4}}
+											</label>
+										</div>
+									</td>
+								</tr>
+							</tbody>
+						</table>
 					</div>
 				</div>
+				{% endfor %}
 			</div>
-	    </section >
-	    {% endfor %}
+		</section>
 	</article>
 {%  endblock %}
+

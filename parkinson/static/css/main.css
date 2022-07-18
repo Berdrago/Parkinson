@@ -188,7 +188,7 @@ textarea {
 	background-color:   #2ca089;
 }
 */
-
+/* Titulo de Fo */
 .titulo {
     text-align: center;
 }
@@ -196,14 +196,40 @@ textarea {
 .subtitulo {
     text-align: center;
 }
+@media screen and (max-width: 600px) {
+    table {
+        width:100%;
+    }
+    thead {
+        display: none;
+    }
+    tr:nth-of-type(2n) {
+        background-color: inherit;
+    }
+    tr td:first-child {
+        background: #f0f0f0;
+        font-weight:bold;
+        font-size:1.3em;
+    }
+    tbody td {
+        display: block;
+        text-align:center;
+    }
+    tbody td:before {
+        content: attr(data-th);
+        display: block;
+        text-align:center;
+    }
+}
 
+/* Propuesta de Diseño  
 .table {
     align-items: center;
     margin: 150px auto;
     width: 600px;
 }
-
-
+*/
+/* Propuesta de Diseño  */
 .container {
     font-size: x-small;
     font-family: Verdana, ;
@@ -246,6 +272,7 @@ textarea {
 .btn1:active {
     transform: translateY(0);
 }
+/* Propuesta de Diseño 2 */
 .btn {
     white-space:normal !important;
     word-wrap: word-break;
@@ -255,7 +282,7 @@ textarea {
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 0;
-    font-size: 14px;
+    font-size: x-small;
     font-weight: 400;
     text-align: center;
     white-space: nowrap;
@@ -287,7 +314,6 @@ textarea {
     width: 100%;
     table-layout: fixed;
     border-collapse: separate;
-    width: 200px;
 }
 .btn-group-vertical>.btn, .btn-group>.btn {
     position: relative;
@@ -334,17 +360,8 @@ textarea {
     background: rgb(236, 236, 236);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
-.glyphicon{
-    
-}
-
-.glyphicon-unchecked{
-}
-
 .hidden-xs{
     align-items: center;
-    margin: 150px auto;
-    width: 600px;
     max-width: 650px;
     vertical-align: top;
 }
@@ -355,10 +372,6 @@ textarea {
 .btn:active {
     transform: translateY(0);
 }
-
-
-
-
 
 
 /* Basic */
