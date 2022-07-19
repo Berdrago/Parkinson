@@ -5,6 +5,7 @@
 */
 
 (function($) {
+
     const status = 'Enable';
     const toggle = [true, true, true, true, true];
 
@@ -24,8 +25,7 @@
         this.status = this.toggle[idx] ? 'Enable' : 'Disable';
 
     }
-
-
+    
 
     var $window = $(window),
         $body = $('body'),

@@ -11,97 +11,90 @@
 {%  endblock %}
 <!-- El bloque de contenido que permite extender solo los archivos de este html en concreto -->
 {% block contenido%}
-    <header id="header" class="alt">
-		<h1><a href="{% url 'index' %}">Inicio</a></h1>
-		<nav id="nav">
-			<ul>
-				<li class="special">
-					<a href="#menu" class="menuToggle"><span>Menu</span></a>
-					<div id="menu">
-						<ul>
-							<li><a href="{% url 'index' %}">Inicio</a></li>
-							<li><a href="{% url 'generic' %}">General</a></li>
-							<li><a href="{% url 'elements' %}">Elememtos</a></li>
-							<li><a href="#">Registrarse</a></li>
-							<li><a href="#">Iniciar Sesion</a></li>
-							<li><a href="http://dread9.pythonanywhere.com/admin/login/?next=/admin">Admin</a></li>
-							<li><a href="{% url 'formulario' %}">Formulario</a></li>
-						</ul>
-					</div>
-				</li>
-			</ul>
-		</nav>
-	</header>
-<!-- Main -->
-	<article id="main">
-		<header>
-			<h2>Formulario</h2>
+	    <header id="header" class="alt">
+			<h1><a href="{% url 'index' %}">Formulario</a></h1>
+			<nav id="nav">
+				<ul>
+					<li class="special">
+						<a href="#menu" class="menuToggle"><span>Menu</span></a>
+						<div id="menu">
+							<ul>
+								<li><a href="{% url 'index' %}">Inicio</a></li>
+								<li><a href="{% url 'generic' %}">General</a></li>
+								<li><a href="{% url 'elements' %}">Elememtos</a></li>
+								<li><a href="#">Registrarse</a></li>
+								<li><a href="#">Iniciar Sesion</a></li>
+								<li><a href="http://dread9.pythonanywhere.com/admin/login/?next=/admin">Admin</a></li>
+								<li><a href="{% url 'formulario' %}">Formulario</a></li>
+							</ul>
+						</div>
+					</li>
+				</ul>
+			</nav>
 		</header>
-		<section class="wrapper style5">
-			<div class="inner">
-				{% for creacionmodulo in creacionmodulos %}
-				<h2 class="titulo" >{{creacionmodulo.t_modulo}}</h2>
-				<div>
-					<h3 class="subtitulo">
-						{{creacionmodulo.s_modulo}}
-					</h3>
-					<div class="table-wrapper">
-						<table class="alt">
-							<tbody  class="subtitulo">
-								<tr>
-									<td>
-										<div class="" >
-											<label class="btn btn-btn-custom"  for="mod0" >
-												<input type="radio"id="mod0" name="options0" autocomplete="off" value="0" checked>
-												<span class="glyphicon glyphicon-unchecked"></span>
+		<!-- Banner --
+         <!-- Main -->
+		<article id="main">
+			<header>
+				<h2>Formulario</h2>
+			</header>
+			<section class="wrapper style5" >
+				<div class="inner">
+					<h2 class="titulo" >MENTATION, BEHAVIOR AND MOOD</h2>
+					{% for creacionmodulo in creacionmodulos  %}
+					<div>
+						<h3 class="subtitulo">
+							{{creacionmodulo.s_modulo}}
+						</h3>
+						<div class="table-wrapper">
+							<form method="post">
+								<table class="alt">
+									<tbody  class="subtitulo">
+										<tr >
+											<td class="btn btn-btn-custom" >
+												<label  >
+													<input  type="checkbox" id="mod" name="mod" autocomplete="off" value="0" required=False>
+													<span class="checkbox"></span>
+												</label>
 												{{creacionmodulo.nombre_check}}
-											</label>
-								 		</div>
-									</td>
-									<td>
-										<div class="" >
-											<label class="btn btn-btn-custom"  for="mod1" >
-												<input type="radio"id="mod1" name="options1" autocomplete="off" value="1" checked>
-												<span class="glyphicon glyphicon-unchecked"></span>
+											</td>
+											<td class="btn btn-btn-custom" >
+												<label   >
+													<input  type="checkbox" id="mod1" name="mod1" autocomplete="off" value="1" required=False>
+													<span class="checkbox"></span>
+												</label>
 												{{creacionmodulo.nombre_check1}}
-											</label>
-										</div>
-									</td>
-									<td>
-										<div class="" >
-											<label class="btn btn-btn-custom"  for="mod2" >
-												<input type="radio"id="mod2" name="options2" autocomplete="off" value="2" checked>
-												<span class="glyphicon glyphicon-unchecked"></span>
+											</td>
+											<td class="btn btn-btn-custom" >
+												<label   >
+													<input  type="checkbox" id="mod2" name="mod2" autocomplete="off" value="2" required=False>
+													<span class="checkbox"></span>
+												</label>
 												{{creacionmodulo.nombre_check2}}
-											</label>
-										</div>
-									</td>
-									<td>
-										<div class="" data-toggle="buttons">
-											<label class="btn btn-btn-custom"  for="mod3" >
-												<input type="radio"id="mod3" name="options3" autocomplete="off" value="3" checked>
-												<span class="glyphicon glyphicon-unchecked"></span>
+											</td>
+											<td class="btn btn-btn-custom" >
+												<label   >
+													<input  type="checkbox" id="mod3" name="mod3" autocomplete="off" value="3" required=False>
+													<span class="checkbox"></span>
+												</label>
 												{{creacionmodulo.nombre_check3}}
-											</label>
-										</div>
-									</td>
-									<td>
-										<div class="" >
-											<label class="btn btn-btn-custom"  for="mod4" >
-												<input type="radio"id="mod4" name="options4" autocomplete="off" value="4" checked>
-												<span class="glyphicon glyphicon-unchecked"></span>
+											</td>
+											<td class="btn btn-btn-custom">
+												<label  >
+													<input type="checkbox" id="mod4" name="mod4"  autocomplete="off" value="4" required=False>
+													<span class="checkbox"></span>
+												</label>
 												{{creacionmodulo.nombre_check4}}
-											</label>
-										</div>
-									</td>
-								</tr>
-							</tbody>
-						</table>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+						    </form>
+						</div>
 					</div>
+					{% endfor %}
 				</div>
-				{% endfor %}
-			</div>
-		</section>
-	</article>
+			</section>
+		</article>
 {%  endblock %}
 

@@ -32,10 +32,9 @@ class FORMULARIO(models.Model):
     t_i_m=models.IntegerField(verbose_name="Total de Interaciones en Modulos")
     def __str__(self):
         return self.id_fp
-class Creacion_modulo_MBM(models.Model):
+class CREACION_MODULO_MBM(models.Model):
     id_mbm=models.AutoField(primary_key=True)
-    t_modulo=models.CharField(max_length=240,verbose_name="Titulo del Modulo")
-    s_modulo=models.CharField(max_length=240,verbose_name="Subtitulo del Modulo")
+    s_modulo=models.CharField(max_length=240,verbose_name="Subtitulo 1  del Modulo")
     nombre_check=models.CharField(max_length=240, verbose_name="Nombre de Modulo 0", default="")
     nombre_check1=models.CharField(max_length=240,verbose_name="Nombre de Modulo 1", default="")
     nombre_check2=models.CharField(max_length=240,verbose_name="Nombre de Modulo 2", default="")
@@ -45,7 +44,9 @@ class Creacion_modulo_MBM(models.Model):
     score_m=models.IntegerField(verbose_name="Score de Modulo")
     i_m=models.IntegerField(verbose_name="Interaccion de Modulo")
     def __str__(self):
-        return self.t_modulo
+        return self.s_modulo
+    class Meta:
+        ordering = ['id_mbm']
 class Creacion_modulo_ADL(models.Model):
     id_adl=models.AutoField(primary_key=True)
     t_modulo=models.CharField(max_length=20,verbose_name="Titulo del Modulo")

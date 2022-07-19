@@ -1,7 +1,7 @@
 from django.shortcuts import render
 
 from parkinson.forms import formAgregar
-from parkinson.models import Creacion_modulo_MBM
+from parkinson.models import CREACION_MODULO_MBM
 
 # Create your views here.
 
@@ -12,7 +12,7 @@ def elements(request):
 def generic(request):
     return render(request,"generic.html")
 def formulario(request):
-    creacionmodulo =  Creacion_modulo_MBM.objects.filter().order_by('-id_mbm') 
+    creacionmodulo =  CREACION_MODULO_MBM.objects.filter().order_by('id_mbm') 
     contexto=  {
         'creacionmodulos':creacionmodulo}
 

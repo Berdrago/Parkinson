@@ -9,7 +9,7 @@ from parkinson.models import Creacion_modulo_MHYS
 from parkinson.models import Creacion_modulo_SEADLS
 from parkinson.models import Creacion_modulo_CT
 from parkinson.models import Creacion_modulo_ADL
-from parkinson.models import Creacion_modulo_MBM
+from parkinson.models import CREACION_MODULO_MBM
 from parkinson.models import FORMULARIO_FINALIZADO
 from parkinson.models import FORMULARIO
 from parkinson.models import GRAFICOS_FF
@@ -33,9 +33,13 @@ class FORM(admin.ModelAdmin):
     search_fields=("f_c_f",)
     list_filter=("id_fp",)
 class MODULO1(admin.ModelAdmin):
-    list_display=("t_modulo",)
-    search_fields=("t_modulo",)
+    list_display=("s_modulo",)
+    search_fields=("s_modulo",)
     list_filter=("s_modulo",)
+    def get_queryset(self, request):
+        ordering = CREACION_MODULO_MBM.objects.all().order_by('id_mbm')
+        return ordering
+    
 class MODULO2(admin.ModelAdmin):
     list_display=("t_modulo",)
     search_fields=("t_modulo",)
@@ -70,11 +74,11 @@ class GRAF_F(admin.ModelAdmin):
     list_filter=("g_ff",)
 
 #------------------------------------------------
-admin.site.register(Crear_usuario,ADMIN)
+admin.site.register(Crear_usuario ,ADMIN)
 admin.site.register(Validacion_de_usuario,VALIDACION)
 admin.site.register(FORMULARIO,FORM)
 admin.site.register(Recuperacion_contraseña ,RECUPERACION)
-admin.site.register(Creacion_modulo_MBM,MODULO1)
+admin.site.register(CREACION_MODULO_MBM ,MODULO1)
 admin.site.register(Creacion_modulo_ADL,MODULO2)
 admin.site.register(Creacion_modulo_ME,MODULO3)
 admin.site.register(Creacion_modulo_CT,MODULO4)
